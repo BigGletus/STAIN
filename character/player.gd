@@ -20,5 +20,6 @@ var att_innocence: int #innocence is placeholder name for holiness/virtue
 var att_allure: int
 
 func _ready():
-	att_health = 10
-	
+	maximum_hp = att_health
+	att_health = maximum_hp
+	print(maximum_hp)
