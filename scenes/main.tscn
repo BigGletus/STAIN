@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wldjxnjc8ush" path="res://assets/32rogues/tiles.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://hluf0kmosma2" path="res://assets/32rogues/rogues.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://deqiw70f1jbsh" path="res://assets/32rogues/monsters.png" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cglrnx1cytfc4" path="res://testing player/player.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 resource_name = "Rogue Tiles"
@@ -1248,3 +1249,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAQAAAAAAAEAAAAAAAUAAAABAAAAAAABAAQ
 tile_set = SubResource("TileSet_o5qli")
 
 [node name="Combatants" type="Node2D" parent="SandboxLevel" unique_id=1104687966]
+
+[node name="Player" parent="SandboxLevel/Combatants" unique_id=505273591 instance=ExtResource("6_tefeu")]
+position = Vector2(32, 32)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cglrnx1cytfc4"]
 
-[ext_resource type="Script" uid="uid://cusglufowvvyx" path="res://testing player/character_body_2d.gd" id="1_vnt4l"]
+[ext_resource type="Script" uid="uid://cusglufowvvyx" path="res://testing player/player.gd" id="1_vnt4l"]
 [ext_resource type="Texture2D" uid="uid://hluf0kmosma2" path="res://assets/32rogues/rogues.png" id="2_rwrqt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
@@ -9,17 +9,22 @@ region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gqw8"]
 
-[node name="Node2D" type="Node2D" unique_id=505273591]
+[node name="Player" type="Node2D" unique_id=505273591]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1327629404]
-anchor_mode = 0
+position = Vector2(16, 16)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1976201470]
+motion_mode = 1
 script = ExtResource("1_vnt4l")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=506841315]
+[node name="Sprite" type="Sprite2D" parent="CharacterBody2D" unique_id=506841315]
 texture = SubResource("AtlasTexture_0e48y")
+centered = false
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=92506455]
-scale = Vector2(1.6, 1.6)
+visible = false
+position = Vector2(16, 16)
+scale = Vector2(1.2, 1.2)
 shape = SubResource("RectangleShape2D_7gqw8")
