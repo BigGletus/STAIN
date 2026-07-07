@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://dtqtgcsd8jmm2"]
 
 [ext_resource type="Script" uid="uid://bb1c0ea174clq" path="res://resource test/enemy_stats_toot.gd" id="1_u5ho7"]
-[ext_resource type="Script" uid="uid://bv7ghfcgry5st" path="res://resource test/stats_toot.gd" id="2_daora"]
-
-[sub_resource type="Resource" id="Resource_0ogib"]
-script = ExtResource("2_daora")
-metadata/_custom_type_script = "uid://bv7ghfcgry5st"
+[ext_resource type="Resource" uid="uid://c5fhc8roa1pdf" path="res://resource test/enemy_stats.tres" id="2_daora"]
 
 [node name="EnemyStatsToot" type="Node2D" unique_id=14758451]
 script = ExtResource("1_u5ho7")
-stats = SubResource("Resource_0ogib")
+stats = ExtResource("2_daora")

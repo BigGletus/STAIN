@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@export 
 var input_dir: Vector2
 var moving: bool = false
 const TILE_SIZE: int = 32 #The asset pack uses 32p for the assets. I might make it 16 to move half a square as movement for more granularity. 
