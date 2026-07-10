@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dtqtgcsd8jmm2"]
+
+[ext_resource type="Script" uid="uid://bb1c0ea174clq" path="res://experiments/resource test/enemy_stats_toot.gd" id="1_u5ho7"]
+[ext_resource type="Resource" uid="uid://c5fhc8roa1pdf" path="res://experiments/resource test/enemy_stats.tres" id="2_daora"]
+
+[node name="EnemyStatsToot" type="Node2D" unique_id=14758451]
+script = ExtResource("1_u5ho7")
+stats = ExtResource("2_daora")

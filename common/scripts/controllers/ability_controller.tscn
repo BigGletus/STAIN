@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bnqrmmoeadsxc"]
+
+[ext_resource type="Script" uid="uid://clpukxynxg5iw" path="res://common/scripts/controllers/ability_controller.gd" id="1_bcmly"]
+
+[node name="AbilityController" type="Node" unique_id=422214700]
+script = ExtResource("1_bcmly")

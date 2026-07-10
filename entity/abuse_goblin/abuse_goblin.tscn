@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ci4xxyg76ykyg"]
+
+[ext_resource type="Script" uid="uid://ee405j2dyu7k" path="res://entity/abuse_goblin/abuse_goblin.gd" id="1_8c056"]
+[ext_resource type="Texture2D" uid="uid://deqiw70f1jbsh" path="res://assets/32rogues/monsters.png" id="1_cbxh6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r750j"]
+atlas = ExtResource("1_cbxh6")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r750j"]
+size = Vector2(16, 16)
+
+[node name="AbuseGoblin" type="Node2D" unique_id=1025849038]
+script = ExtResource("1_8c056")
+maximum_hp = 99
+current_hp = 99
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=762137215]
+texture = SubResource("AtlasTexture_r750j")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1688386901]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=355321677]
+shape = SubResource("RectangleShape2D_r750j")
