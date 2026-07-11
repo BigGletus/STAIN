@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://hluf0kmosma2" path="res://assets/32rogues/rogues.png" id="3_onf7c"]
 [ext_resource type="Texture2D" uid="uid://deqiw70f1jbsh" path="res://assets/32rogues/monsters.png" id="4_si3g0"]
 [ext_resource type="Texture2D" uid="uid://cmlklalquh575" path="res://assets/Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Dungeon_Tiles.png" id="5_pidc3"]
-[ext_resource type="PackedScene" uid="uid://ci4xxyg76ykyg" path="res://entity/abuse_goblin/abuse_goblin.tscn" id="6_onf7c"]
-[ext_resource type="PackedScene" uid="uid://bbm76g5m83ugf" path="res://entity/player/player.tscn" id="6_snrr3"]
-[ext_resource type="Script" uid="uid://bb652cy4abv54" path="res://common/scripts/Ability.gd" id="8_pidc3"]
+[ext_resource type="PackedScene" uid="uid://ci4xxyg76ykyg" path="res://scene/entity/character/abuse_goblin/abuse_goblin.tscn" id="6_onf7c"]
+[ext_resource type="PackedScene" uid="uid://bbm76g5m83ugf" path="res://scene/entity/character/player/player.tscn" id="6_snrr3"]
+[ext_resource type="Script" uid="uid://bb652cy4abv54" path="res://scene/entity/ability/Ability.gd" id="8_pidc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 resource_name = "Rogue Tiles"
@@ -1340,11 +1340,13 @@ shape = SubResource("RectangleShape2D_3lqjx")
 
 [node name="Combatants" type="Node2D" parent="SandboxLevel" unique_id=1104687966]
 
-[node name="AbuseGoblin" parent="SandboxLevel/Combatants" unique_id=1025849038 instance=ExtResource("6_onf7c")]
+[node name="GoblinSpawn" type="Node2D" parent="SandboxLevel/Combatants" unique_id=1744974128]
 position = Vector2(304, 144)
 
-[node name="Node2D" type="Node2D" parent="SandboxLevel/Combatants" unique_id=477018863]
+[node name="AbuseGoblin" parent="SandboxLevel/Combatants/GoblinSpawn" unique_id=1025849038 instance=ExtResource("6_onf7c")]
+
+[node name="PlayerSpawn" type="Node2D" parent="SandboxLevel/Combatants" unique_id=477018863]
 position = Vector2(144, 144)
 
-[node name="Player" parent="SandboxLevel/Combatants/Node2D" unique_id=1301959968 instance=ExtResource("6_snrr3")]
+[node name="Player" parent="SandboxLevel/Combatants/PlayerSpawn" unique_id=1301959968 instance=ExtResource("6_snrr3")]
 ability_list = Array[ExtResource("8_pidc3")]([SubResource("Resource_onf7c")])

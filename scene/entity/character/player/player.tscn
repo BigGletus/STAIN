@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bbm76g5m83ugf"]
+
+[ext_resource type="Texture2D" uid="uid://hluf0kmosma2" path="res://assets/32rogues/rogues.png" id="1_cgs7w"]
+[ext_resource type="Script" uid="uid://dpbg02r6y35mp" path="res://scene/entity/character/player/player.gd" id="1_lb681"]
+[ext_resource type="Script" uid="uid://bb652cy4abv54" path="res://scene/entity/ability/Ability.gd" id="2_482rp"]
+[ext_resource type="Resource" uid="uid://vli07ef0g8s5" path="res://scene/entity/ability/basic/basic_melee.tres" id="3_pvrjc"]
+[ext_resource type="Resource" uid="uid://dw1wnlkf8707j" path="res://scene/entity/ability/basic/basic_heal.tres" id="4_b77dn"]
+[ext_resource type="PackedScene" uid="uid://bnqrmmoeadsxc" path="res://common/scripts/controllers/ability_controller.tscn" id="4_bgq54"]
+[ext_resource type="PackedScene" uid="uid://2kph5ykmjexk" path="res://common/scripts/controllers/movement_controller.tscn" id="6_lt5t6"]
+[ext_resource type="PackedScene" uid="uid://sq7xvdpokq0q" path="res://common/scripts/controllers/input_controller.tscn" id="8_lt5t6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jiyr"]
+atlas = ExtResource("1_cgs7w")
+region = Rect2(0, 96, 32, 32)
+
+[node name="Player" type="Node2D" unique_id=1301959968 node_paths=PackedStringArray("AbilityController", "InputController", "MovementController")]
+script = ExtResource("1_lb681")
+character_name = "Test Player"
+maximum_hp = 15
+current_hp = 15
+ability_list = Array[ExtResource("2_482rp")]([ExtResource("3_pvrjc"), ExtResource("4_b77dn")])
+is_player_controlled = true
+AbilityController = NodePath("AbilityController")
+InputController = NodePath("InputController")
+MovementController = NodePath("MovementController")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=585281893]
+texture = SubResource("AtlasTexture_5jiyr")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=637681715]
+zoom = Vector2(3, 3)
+
+[node name="MovementController" parent="." unique_id=2002066893 instance=ExtResource("6_lt5t6")]
+
+[node name="AbilityController" parent="." unique_id=422214700 instance=ExtResource("4_bgq54")]
+
+[node name="InputController" parent="." unique_id=1935372619 instance=ExtResource("8_lt5t6")]
+
+[connection signal="walk_send" from="MovementController" to="." method="_on_walk_receive"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://vli07ef0g8s5"]
+
+[ext_resource type="Script" uid="uid://bb652cy4abv54" path="res://scene/entity/ability/Ability.gd" id="1_uh7u5"]
+
+[resource]
+script = ExtResource("1_uh7u5")
+ability_name = "Basic Melee"
+ability_types = Array[int]([1])
+ability_damage = 1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://dw1wnlkf8707j"]
+
+[ext_resource type="Script" uid="uid://bb652cy4abv54" path="res://scene/entity/ability/Ability.gd" id="1_x5ab5"]
+
+[resource]
+script = ExtResource("1_x5ab5")
+ability_name = "Basic Heal"
+ability_types = Array[int]([3])
+ability_heal = 1
+metadata/_custom_type_script = "uid://bb652cy4abv54"
